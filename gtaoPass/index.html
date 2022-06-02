@@ -259,7 +259,12 @@
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0x13191c ).convertSRGBToLinear();
 
-				renderer = new THREE.WebGLRenderer();
+				renderer = new THREE.WebGLRenderer({
+    				logarithmicDepthBuffer: true,
+					antialias: false,
+					stencil: false,
+					depth: false,
+				});
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				renderer.shadowMap.enabled = true;
